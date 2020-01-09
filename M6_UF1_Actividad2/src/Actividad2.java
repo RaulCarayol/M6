@@ -12,16 +12,18 @@ public class Actividad2 {
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Quieres (1)Escribir o (0)leer un coche ?");
 		if(teclado.nextInt() == 1){
-			escribirCotxe();
+			escribirCotxe(teclado);
 		}else{
 			
 		}
 	
 	}
-	public static void escribirCotxe() throws IOException{
+	public static void escribirCotxe(Scanner teclado) throws IOException{
 		Cotxe cotxe;
 		//Declaració del fitxer
-		File fitxer = new File("/home/user/Escriptori/comarquesObject.txt");
+		System.out.println("Escriba el fichero");
+		//"/home/user/Escriptori/comarquesObject.txt"
+		File fitxer = new File(teclado.next());
 		if(!fitxer.exists()){
 			System.out.println("El fichero no existe, se va ha crear");
 			if(fitxer.createNewFile()){
@@ -36,8 +38,7 @@ public class Actividad2 {
 		ObjectOutputStream dataOuComarq = new ObjectOutputStream(fileout);
 		//datos para el cotxe
 		cotxe = new Cotxe("Audi","Q7","123456QWE",2019);
-			dataOuComarq.writeObject(cotxe);//L'escriu al fixer
-
+		dataOuComarq.writeObject(cotxe);//L'escriu al fixer
 		dataOuComarq.close();//Tanca el stream de sortida
 	}
 
