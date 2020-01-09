@@ -2,8 +2,8 @@ import java.io.File;
 
 
 public class VeureInfo {
-
 	public static void main(String[] args) {
+
 		System.out.println("INFORMACIÓ SOBRE EL FITXER");
 		 File f = new File("javi");
 		 if(f.exists()){
@@ -15,6 +15,8 @@ public class VeureInfo {
 			 System.out.println("Grandaria      : "+f.length());
 			 System.out.println("Es un directori: "+f.isDirectory());
 			 System.out.println("Es un fitxer   : "+f.isFile());
+		 }else{
+			 System.out.println("No existe el fichero");
 		 }
 	}
 
