@@ -62,7 +62,16 @@ public class Actividad2 {
 			//Crea el flux de sortida
 			
 			//Connectar el flux de bytes al flux de dades
-			ObjectOutputStream dataOuComarq = new ObjectOutputStream(fileout);
+			ObjectOutputStream dataOuComarq;
+			if(!fitxer.exists() || fitxer.length() <= 1){
+				dataOuComarq = new ObjectOutputStream(fileout);
+			}else{
+				dataOuComarq = new ObjectOutputStream(fileout) { protected void writeStreamHeader() throws IOException {
+						reset();
+	                }
+	            };
+			    
+			}
 			do{
 				//datos para el cotxe
 				cotxe = pedirDatosCotxe( teclado);
