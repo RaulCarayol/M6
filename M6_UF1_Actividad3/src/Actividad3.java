@@ -6,11 +6,12 @@ import java.io.RandomAccessFile;
 public class Actividad3 {
 	 private Persona[] arrayPerson;
 	 private File fichero;
-	public Actividad3(File file,Persona[] personas){
+	public Actividad3(File file,Persona[] personas) throws IOException{
 		this.fichero= file;;
 		this.arrayPerson = personas;
+		guardar();
 	}
-	private void guardar() throws FileNotFoundException{
+	private void guardar() throws IOException{
 		RandomAccessFile aleatoriFile = new RandomAccessFile(fichero, "rw");
 		StringBuffer buffer = null;
 		
@@ -25,16 +26,13 @@ public class Actividad3 {
 			buffer.setLength(50);
 			aleatoriFile.writeChars(buffer.toString());
 			//25 caràcters a 2bytes/caràcter 50 bytes
-
-			buffer = new StringBuffer (autor[i]);
-			buffer.setLength(25);
+			
+			buffer = new StringBuffer (arrayPerson[i].getDNI());
+			buffer.setLength(50);
 			aleatoriFile.writeChars(buffer.toString());
-			//30 caràcters a 2bytes/caràcter 60 bytes
-			buffer = new StringBuffer (editorial[i]);
-			buffer.setLength(30);
-			aleatoriFile.writeChars(buffer.toString());
+			
 			//1 float ocupa 4 bytes
-			aleatoriFile.writeFloat((float)preu[i]);
+			aleatoriFile.writeInt(arrayPerson[i].getEdad());
 			//Total 222 bytes
 		}
 		aleatoriFile.close();
