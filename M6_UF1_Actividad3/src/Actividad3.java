@@ -17,11 +17,11 @@ public class Actividad3 {
 		
 		for (int i=0; i<arrayPerson.length; i++) {
 			aleatoriFile.writeInt(i+1);//1 enter ocupa 4 bytes
-			//50 caràcters a 2bytes/caràcter 100 bytes
+			//50 caracteres 2bytes caracteres 100 bytes
 			buffer = new StringBuffer (arrayPerson[i].getNombre());
 			buffer.setLength(50);
 			aleatoriFile.writeChars(buffer.toString());
-			//50 caràcters a 2bytes/caràcter 100 bytes
+			//50 caracteres 2bytes caracteres 100 bytes
 			buffer = new StringBuffer (arrayPerson[i].getApellido());
 			buffer.setLength(50);
 			aleatoriFile.writeChars(buffer.toString());
