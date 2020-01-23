@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -12,7 +11,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -77,6 +75,7 @@ public class Actividad5 {
 		}
 		guardarFichero(doc, teclado, file);
 	}
+	
 	private static int mostararMenu(Scanner teclado) {
 		int opcion;
 		System.out.println();
@@ -89,15 +88,15 @@ public class Actividad5 {
 		opcion = teclado.nextInt();
 		return opcion;
 	}
+	
 	private static void eliminarNodo(Document doc, Scanner teclado,File file) throws TransformerConfigurationException, TransformerFactoryConfigurationError, TransformerException {
 		Element elemento = buscarElementoId(teclado,doc);
 		if(elemento != null){
 			atriubutosNodo(elemento, "");
 			elemento.getParentNode().removeChild(elemento);
-			//guardarFichero(doc, teclado, file);
 		}
-		
 	}
+	
 	private static Element buscarElementoId(Scanner teclado,Document doc){
 		Element elem = null;
 		System.out.println("diga la id del nodo a eliminar");
@@ -108,7 +107,6 @@ public class Actividad5 {
 		NodeList list = alumnes.getChildNodes();
 		for (int i = 0; i < list.getLength(); i++) {
 		    Node node = list.item(i);
-		    System.out.println("\nCurrent Element :" + node.getNodeName());
 		    if (node.getNodeType() == Node.ELEMENT_NODE) {
 		        Element eElement = (Element) node;
 		        if(eElement.getAttribute("id").equalsIgnoreCase(Integer.toString(id))){
@@ -118,6 +116,7 @@ public class Actividad5 {
 		}
 		return elem;
 	}
+	
 	private static void añadirNodo(Document doc,Scanner teclado,File file) throws TransformerException {
 		System.out.println("diga el id del alumno");
 		int id = teclado.nextInt();
@@ -132,6 +131,7 @@ public class Actividad5 {
 		crearAlumno(doc, id, nombre, cognom1, cognom2, notaFinal);
 		guardarFichero(doc, teclado, file);
 	}
+	
 	private static void crearAlumno(Document doc, int id, String nombre,
 			String cognom1, String cognom2, double notaFinal) {
 		//nodo raiz
