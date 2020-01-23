@@ -45,35 +45,34 @@ public class Actividad5 {
 	}
 	private static void modificarNodo(Document doc, Scanner teclado, File file) throws TransformerConfigurationException, TransformerFactoryConfigurationError, TransformerException {
 		Element elem = buscarElementoId(teclado, doc);
-		System.out.println("que quieres cambiar ?");
-		System.out.println("0: id");
-		System.out.println("1: nom");
-		System.out.println("2: cognom");
-		System.out.println("3: cognom2");
-		System.out.println("4: notaFinal");
-		int opcion = teclado.nextInt();
-		if(opcion == 0){
-			System.out.println("diga el id del alumno");
+		if(elem != null){
+			//id
+			System.out.println("nuevo id["+elem.getAttributes().getNamedItem("id")+"]");
 			int id = teclado.nextInt();
 			elem.getAttributes().getNamedItem("id").setTextContent(Integer.toString(id));;
-		}else if(opcion == 1){
-			System.out.println("diga el nombre");
+			//nombre
+			System.out.println("nuevo nombre["+elem.getChildNodes().item(0).
+					getChildNodes().item(0).getTextContent()+"]");
 			String nombre = teclado.next();
 			elem.getChildNodes().item(0).getChildNodes().item(0).setTextContent(nombre);
-		}else if(opcion == 2){
-			System.out.println("Diga el primer apellido");
+			//apellido 1
+			System.out.println("nuevo primer apellido["+elem.getChildNodes().item(1).
+					getChildNodes().item(0).getTextContent()+"]");
 			String cognom1 = teclado.next();
 			elem.getChildNodes().item(1).getChildNodes().item(0).setTextContent(cognom1);
-		}else if(opcion == 3){
-			System.out.println("Diga el segundo apellido");
+			//apellido 2
+			System.out.println("Diga el segundo apellido["+elem.getChildNodes().item(2).
+					getChildNodes().item(0).getTextContent()+"]");
 			String cognom2 = teclado.next();
 			elem.getChildNodes().item(2).getChildNodes().item(0).setTextContent(cognom2);
-		}else{
-			System.out.println("Diga la nota final");
+			//nota final
+			System.out.println("Diga la nota final["+elem.getChildNodes().item(3).
+					getChildNodes().item(0).getTextContent()+"]");
 			double notaFinal = teclado.nextDouble();
 			elem.getChildNodes().item(3).getChildNodes().item(0).setTextContent(Double.toString(notaFinal));
+
+			guardarFichero(doc, teclado, file);
 		}
-		guardarFichero(doc, teclado, file);
 	}
 	
 	private static int mostararMenu(Scanner teclado) {
@@ -94,12 +93,13 @@ public class Actividad5 {
 		if(elemento != null){
 			atriubutosNodo(elemento, "");
 			elemento.getParentNode().removeChild(elemento);
+			guardarFichero(doc, teclado, file);
 		}
 	}
 	
 	private static Element buscarElementoId(Scanner teclado,Document doc){
 		Element elem = null;
-		System.out.println("diga la id del nodo a eliminar");
+		System.out.println("diga la id del alumno");
 		int id = teclado.nextInt();
 		// Get the main element by tag name
 		Node alumnes = doc.getFirstChild();
