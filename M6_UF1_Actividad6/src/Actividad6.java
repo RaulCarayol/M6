@@ -40,7 +40,9 @@ public class Actividad6 {
         Plantas plantas= (Plantas) jaxbUnmarshaller.unmarshal(file);  
           
         System.out.println("Plantas:");  
-        Planta[] arrayPlanta=plantas.getPlantas();  
+        //array de plantas del fichero xml
+        Planta[] arrayPlanta=plantas.getPlantas();
+        //mostrando por pantalla las plantas y alguno de sus atributos
         for (int i = 0; i < arrayPlanta.length; i++) {
         	 System.out.println(arrayPlanta[i].getCommon()+" "+arrayPlanta[i].getBotanical()+"  "+arrayPlanta[i].getLight()+"  "+arrayPlanta[i].getPrice());  
 		}
@@ -74,6 +76,7 @@ public class Actividad6 {
 		int numPlantas = teclado.nextInt();
 		teclado.nextLine();
 		Planta[] arrayPlanta = new Planta[numPlantas];
+		//se piden plantas por teclado
 		for (int i = 0; i < arrayPlanta.length; i++) {
 			pedirPlanta(teclado,i,arrayPlanta);
 		}
