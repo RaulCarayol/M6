@@ -14,7 +14,7 @@ public class Actividad6 {
 	private static final String XML_FILE = "plant_catalog2.xml";
 	public static void main(String[] args) throws JAXBException, IOException {
 		
-		JAXBContext context = JAXBContext.newInstance(Planta.class);
+		JAXBContext context = JAXBContext.newInstance(Plantas.class);
 		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		
@@ -40,27 +40,34 @@ public class Actividad6 {
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Diga el numero de plantas que desea introducir");
 		int numPlantas = teclado.nextInt();
+		teclado.nextLine();
 		Planta[] arrayPlanta = new Planta[numPlantas];
 		for (int i = 0; i < arrayPlanta.length; i++) {
-			arrayPlanta[i] = pedirPlanta(teclado,i);
+			pedirPlanta(teclado,i,arrayPlanta);
 		}
 	
-		Plantas plantas = new Plantas(arrayPlanta);
+		Plantas plantas = new Plantas();
+		plantas.setPlantas(arrayPlanta);
 		return plantas;
 	}
 
-	private static Planta pedirPlanta(Scanner teclado, int i) {
+	private static void pedirPlanta(Scanner teclado, int i, Planta[] arrayPlanta) {
 		System.out.println("--Planta "+i+"--");
-		System.out.println();
-		String common;
-		
-		int availability;
-		String price;
-		
-		String light;
-		int zone;
-		String botanical;
-		return new Planta(common, botanical, zone, light, price, availability);
+		arrayPlanta[i] = new Planta();
+		System.out.println("Diga el nombre comun");
+		arrayPlanta[i].setCommon(teclado.nextLine());
+		System.out.println("Diga el nombre botanico");
+		arrayPlanta[i].setBotanical(teclado.nextLine());
+		System.out.println("Diga el numero de la zona");
+		arrayPlanta[i].setZone(teclado.nextInt());
+		teclado.nextLine();
+		System.out.println("Diga light");
+		arrayPlanta[i].setLight(teclado.nextLine());
+		System.out.println("Diga el precio");
+		arrayPlanta[i].setPrice(teclado.nextLine());
+		System.out.println("Diga la cantidad en stock");
+		arrayPlanta[i].setAvailability(teclado.nextInt());
+		teclado.nextLine();
 	}
 
 }

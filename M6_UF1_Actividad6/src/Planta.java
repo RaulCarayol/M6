@@ -1,4 +1,7 @@
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Planta")
 public class Planta {
 	 private String common;
 	 private String botanical;
@@ -6,15 +9,7 @@ public class Planta {
 	 private String light;
 	 private String price;
 	 private int availability;
-	public Planta(String common, String botanical, int zone, String light,
-			String price, int availability) {
-		this.common = common;
-		this.botanical = botanical;
-		this.zone = zone;
-		this.light = light;
-		this.price = price;
-		this.availability = availability;
-	}
+
 	public String getCommon() {
 		return common;
 	}

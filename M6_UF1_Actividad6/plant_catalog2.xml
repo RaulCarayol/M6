@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plantas>
+    <plantas>
+        <availability>45</availability>
+        <botanical>`pl</botanical>
+        <common>pol</common>
+        <light>pol</light>
+        <price>5</price>
+        <zone>4</zone>
+    </plantas>
+</plantas>
