@@ -39,8 +39,7 @@ public class Actividad6 {
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
         Plantas plantas= (Plantas) jaxbUnmarshaller.unmarshal(file);  
           
-        //System.out.println(que.getId()+" "+planta.ge);  
-        System.out.println("Answers:");  
+        System.out.println("Plantas:");  
         Planta[] arrayPlanta=plantas.getPlantas();  
         for (int i = 0; i < arrayPlanta.length; i++) {
         	 System.out.println(arrayPlanta[i].getCommon()+" "+arrayPlanta[i].getBotanical()+"  "+arrayPlanta[i].getLight()+"  "+arrayPlanta[i].getPrice());  

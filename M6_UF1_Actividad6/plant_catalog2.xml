@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <plantas>
     <plantas>
-        <common>MOLA</common>
-        <botanical>MOLA</botanical>
-        <zone>45</zone>
-        <light>MOLA2</light>
-        <price>4</price>
-        <availability>2345243</availability>
+        <common>Margarita</common>
+        <botanical>margaritas botanicus</botanical>
+        <zone>34</zone>
+        <light>clara</light>
+        <price>5</price>
+        <availability>3414</availability>
+    </plantas>
+    <plantas>
+        <common>Girasol</common>
+        <botanical>girasol comun</botanical>
+        <zone>78</zone>
+        <light>oscura</light>
+        <price>7</price>
+        <availability>345</availability>
     </plantas>
 </plantas>
