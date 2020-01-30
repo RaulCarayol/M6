@@ -43,6 +43,7 @@ public class Actividad5 {
 			}
 		} while (opcion != 4);
 	}
+	
 	private static void modificarNodo(Document doc, Scanner teclado, File file) throws TransformerConfigurationException, TransformerFactoryConfigurationError, TransformerException {
 		Element elem = buscarElementoId(teclado, doc);
 		if(elem != null){
