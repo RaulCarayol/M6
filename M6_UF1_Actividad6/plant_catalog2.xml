@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <plantas>
     <plantas>
-        <availability>45</availability>
-        <botanical>`pl</botanical>
-        <common>pol</common>
-        <light>pol</light>
-        <price>5</price>
-        <zone>4</zone>
+        <common>MOLA</common>
+        <botanical>MOLA</botanical>
+        <zone>45</zone>
+        <light>MOLA2</light>
+        <price>4</price>
+        <availability>2345243</availability>
     </plantas>
 </plantas>

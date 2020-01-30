@@ -3,14 +3,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Plantas {
-	private Planta[] plantas;
-	
+	private Planta[] planta;
 
 	public Planta[] getPlantas() {
-		return plantas;
+		return planta;
 	}
 
 	public void setPlantas(Planta[] plantas) {
-		this.plantas = plantas;
+		this.planta = plantas;
 	}
 }

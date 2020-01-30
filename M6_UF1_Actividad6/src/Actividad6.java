@@ -1,7 +1,9 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.bind.JAXBContext;
@@ -13,12 +15,44 @@ import javax.xml.bind.Unmarshaller;
 public class Actividad6 {
 	private static final String XML_FILE = "plant_catalog2.xml";
 	public static void main(String[] args) throws JAXBException, IOException {
+		Scanner teclado = new Scanner(System.in);
+		int opcion = 0;
+		do{
+			System.out.println();
+			System.out.println("MENU");
+			System.out.println("1-Crear XML ");
+			System.out.println("2-Leer XML ");
+			System.out.println("3-Salir ");
+			opcion = teclado.nextInt();
+			if(opcion == 1){
+				crearXml(teclado);
+			}else if(opcion == 2){
+				xmlAObjeto(teclado);
+			}
+		}while(opcion!=3);
+		teclado.close();
+	}
+	private static void xmlAObjeto(Scanner teclado) throws JAXBException {
+		File file = new File(XML_FILE);  
+        JAXBContext jaxbContext = JAXBContext.newInstance(Plantas.class);  
+   
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
+        Plantas plantas= (Plantas) jaxbUnmarshaller.unmarshal(file);  
+          
+        //System.out.println(que.getId()+" "+planta.ge);  
+        System.out.println("Answers:");  
+        Planta[] arrayPlanta=plantas.getPlantas();  
+        for (int i = 0; i < arrayPlanta.length; i++) {
+        	 System.out.println(arrayPlanta[i].getCommon()+" "+arrayPlanta[i].getBotanical()+"  "+arrayPlanta[i].getLight()+"  "+arrayPlanta[i].getPrice());  
+		}
 		
+	}
+	public static void crearXml(Scanner teclado) throws JAXBException, IOException{
 		JAXBContext context = JAXBContext.newInstance(Plantas.class);
 		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		
-		Plantas plantas = leerPlantas();
+		Plantas plantas = leerPlantas(teclado);
 		
 		//Mostrem el document XML generat por la sortida estandard
 		marshaller.marshal(plantas, System.out);
@@ -35,9 +69,8 @@ public class Actividad6 {
 		//Mostrem l'objeto Java obtingut
 		marshaller.marshal(plantas2, System.out);
 	}
-	
-	private static Plantas leerPlantas() {
-		Scanner teclado = new Scanner(System.in);
+	private static Plantas leerPlantas(Scanner teclado) {
+		
 		System.out.println("Diga el numero de plantas que desea introducir");
 		int numPlantas = teclado.nextInt();
 		teclado.nextLine();
@@ -52,7 +85,7 @@ public class Actividad6 {
 	}
 
 	private static void pedirPlanta(Scanner teclado, int i, Planta[] arrayPlanta) {
-		System.out.println("--Planta "+i+"--");
+		System.out.println("--Planta "+(i+1)+"--");
 		arrayPlanta[i] = new Planta();
 		System.out.println("Diga el nombre comun");
 		arrayPlanta[i].setCommon(teclado.nextLine());
