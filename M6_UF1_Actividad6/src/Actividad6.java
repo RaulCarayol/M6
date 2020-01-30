@@ -1,16 +1,12 @@
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-
 
 public class Actividad6 {
 	private static final String XML_FILE = "plant_catalog2.xml";

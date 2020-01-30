@@ -55,6 +55,4 @@ public class Planta {
 	public void setAvailability(int availability) {
 		this.availability = availability;
 	}
-	 
-	 
 }
