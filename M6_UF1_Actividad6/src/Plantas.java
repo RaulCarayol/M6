@@ -2,7 +2,7 @@
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="Plantas")
+@XmlRootElement(name="plantas")
 public class Plantas {
 	private Planta[] planta;
 	@XmlElement(name="Planta")

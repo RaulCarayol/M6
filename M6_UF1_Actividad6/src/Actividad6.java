@@ -59,6 +59,7 @@ public class Actividad6 {
 		marshaller.marshal(plantas, fos);
 		fos.close();
 		
+		
 		Unmarshaller unmarshaller = context.createUnmarshaller();
 		//Deserialitzem a partir de un document XML
 		Plantas plantas2 = (Plantas) unmarshaller.unmarshal(new File(XML_FILE));

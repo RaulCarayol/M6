@@ -3,7 +3,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "Planta")
+@XmlRootElement(name = "PLANT")
 @XmlType(propOrder = {"common", "botanical", "zone", "light", "price","availability"})
 public class Planta {
 	 private String common;
