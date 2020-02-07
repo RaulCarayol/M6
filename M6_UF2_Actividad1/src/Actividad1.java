@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Actividad1 {
-	
+
 	public static void main(String[] args) throws SQLException {
 
 		Connection connection = null;
@@ -25,7 +25,7 @@ public class Actividad1 {
 			teclado.nextLine();
 			if (opcion == 1) {
 				System.out
-						.println("Quiere insertar (1)alumno o (2)Pobalacion??");
+				.println("Quiere insertar (1)alumno o (2)Pobalacion??");
 				opcion = teclado.nextInt();
 				if (opcion == 1) {
 					insertarAlumno(connection, teclado);
@@ -34,7 +34,7 @@ public class Actividad1 {
 				}
 			} else if (opcion == 2) {
 				System.out
-						.println("Quieres leer (1)alumnos o (2)Pobalaciones??");
+				.println("Quieres leer (1)alumnos o (2)Pobalaciones??");
 				opcion = teclado.nextInt();
 				if (opcion == 1) {
 					selectAlumnos(connection, null);
@@ -45,7 +45,7 @@ public class Actividad1 {
 				updateAlumnos(connection, teclado);
 			} else if (opcion == 4) {
 				System.out
-						.println("Quieres eliminar (1)alumnos o (2)Pobalaciones??");
+				.println("Quieres eliminar (1)alumnos o (2)Pobalaciones??");
 				opcion = teclado.nextInt();
 				teclado.nextLine();
 				if (opcion == 1) {
@@ -99,13 +99,7 @@ public class Actividad1 {
 				}
 				stmt = connection.createStatement();
 				stmt.execute("INSERT INTO alumnes (nombre,fechaDeNacimiento,direccioPostal,dni,codiPostal) "
-						+ "VALUES ('"
-						+ nom
-						+ "','"
-						+ fecha
-						+ "','"
-						+ direccion
-						+ "','" + dni + "'," + codigoPostal + ")");
+						+ "VALUES ('"+ nom+ "','"+ fecha+ "','"+ direccion+ "','" + dni + "'," + codigoPostal + ")");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
@@ -247,7 +241,7 @@ public class Actividad1 {
 		String cp;
 		do {
 			System.out
-					.println("diga el CP de la pobalcion que quieres eliminar");
+			.println("diga el CP de la pobalcion que quieres eliminar");
 			cp = teclado.nextLine();
 			if (cp.length() != 5) {
 				System.err.println("El codigo postal es de 5 digitos");
@@ -268,6 +262,6 @@ public class Actividad1 {
 		}
 
 	}
-	
-	
+
+
 }
