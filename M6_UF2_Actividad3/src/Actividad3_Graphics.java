@@ -24,8 +24,8 @@ import javax.swing.JButton;
 public class Actividad3_Graphics extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	public JTextField tfUsuario;
+	public JTextField tfConstrasenya;
 	public JButton btnValidar;
 	public ButtonGroup grupoModos;
 	public JRadioButton rdbtnStament;
@@ -53,16 +53,16 @@ public class Actividad3_Graphics extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		contentPane.add(lblNewLabel, "cell 3 1,alignx right");
 		
-		textField = new JTextField();
-		contentPane.add(textField, "cell 4 1 2 1,growx");
-		textField.setColumns(10);
+		tfUsuario = new JTextField();
+		contentPane.add(tfUsuario, "cell 4 1 2 1,growx");
+		tfUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
 		contentPane.add(lblNewLabel_1, "cell 3 2,alignx right");
 		
-		textField_1 = new JTextField();
-		contentPane.add(textField_1, "cell 4 2 2 1,growx");
-		textField_1.setColumns(10);
+		tfConstrasenya = new JTextField();
+		contentPane.add(tfConstrasenya, "cell 4 2 2 1,growx");
+		tfConstrasenya.setColumns(10);
 		
 		rdbtnStament = new JRadioButton("Statement");
 		rdbtnStament.setSelected(true);
