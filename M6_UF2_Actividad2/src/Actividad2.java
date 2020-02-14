@@ -41,19 +41,19 @@ public class Actividad2 {
 					//poner los datos para evitar injecciones
 					preparedStatement.setString(1, "Tarragona");
 					preparedStatement.setInt(2, 43203);
-					preparedStatement.execute();
+					preparedStatement.executeUpdate();
 					//realizar el segundo insert
 					preparedStatement = connection.prepareStatement("INSERT INTO poblaciones (nombre, CP) VALUES (?,?)");
 					//poner los datos para evitar injecciones
 					preparedStatement.setString(1, "Barcelona");
 					preparedStatement.setInt(2, 43217);
-					preparedStatement.execute();
+					preparedStatement.executeUpdate();
 					//hacer que se espere
 					Thread.sleep(4123);
 					//realizar delete
 					preparedStatement = connection.prepareStatement("DELETE FROM poblaciones WHERE CP = ?");
 					preparedStatement.setInt(1, 43203);
-					preparedStatement.execute();
+					preparedStatement.executeUpdate();
 					//hacer un commit
 					connection.commit();
 					connection.setAutoCommit(true);
@@ -89,19 +89,19 @@ public class Actividad2 {
 	}
 	//realizar conexion
 	private static Connection realizarConexion() {
-		String url = "jdbc:mysql://localhost:3306/m6?serverTimezone=UTC";
+		String url = "jdbc:mysql://localhost:3306/bd6?serverTimezone=UTC";
 		String user = "usuari";
 		String password = "usuari";
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException ex) {
 			System.out.println("No se ha encontrado controlador");
 		}
 		try {
 			connection = DriverManager.getConnection(url, user, password);
 		} catch (SQLException ex) {
-			System.out.println("eRROR" + ex.getMessage());
+			System.out.println("Error " + ex.getMessage());
 		}
 		return connection;
 	}
