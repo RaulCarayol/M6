@@ -70,11 +70,9 @@ public class Actividad2 {
 					}
 					//mostrar cuando ha acabado 
 					graficos.lblMensaje.setText("Realizado Rollback");
-
 				} catch (InterruptedException e) {
 					//Mostrar mensaje de error
 					graficos.lblMensaje.setText(e.getMessage());
-
 				} finally {
 					try {
 						if (preparedStatement != null && !preparedStatement.isClosed()) {
