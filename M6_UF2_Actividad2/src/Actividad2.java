@@ -90,8 +90,8 @@ public class Actividad2 {
 	//realizar conexion
 	private static Connection realizarConexion() {
 		String url = "jdbc:mysql://localhost:3306/m6?serverTimezone=UTC";
-		String user = "root";
-		String password = "";
+		String user = "usuari";
+		String password = "usuari";
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
