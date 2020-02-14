@@ -1,3 +1,5 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -5,12 +7,24 @@ import java.sql.Statement;
 
 
 public class Actividad2 {
-
+	private static Connection connection = null;
+	private static M6_Actividad2_Graphics graficos;
 	public static void main(String[] args) {
-		Connection connection = null;
 		Statement stmt = null;
 		int opcion;
+		 graficos = new M6_Actividad2_Graphics();
+		graficos.btnInsertar.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {
+		 		realizarTransaccion(connection);
+		 	}
+
+			private void realizarTransaccion(Connection connection) {
+				// TODO Auto-generated method stub
+				
+			}
+		 });
 		connection = realizarConexion();
+		
 	}
 	
 	private static Connection realizarConexion() {

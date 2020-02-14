@@ -10,10 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class M6_Actividad2_Graphics extends JFrame {
-
+	public JButton btnInsertar;
 	private JPanel contentPane;
 	private final JPanel panel_1 = new JPanel();
 
@@ -32,11 +34,11 @@ public class M6_Actividad2_Graphics extends JFrame {
 
 	public M6_Actividad2_Graphics() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 400, 250);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(6, 1, 0, -2));
 		
 		JPanel panel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
@@ -54,16 +56,16 @@ public class M6_Actividad2_Graphics extends JFrame {
 		flowLayout_1.setVgap(0);
 		contentPane.add(panel_1);
 		
-		JLabel lblCodi = new JLabel("New label");
+		JLabel lblCodi = new JLabel("43203");
 		panel_1.add(lblCodi);
 		
-		JLabel lblNom = new JLabel("New label");
+		JLabel lblNom = new JLabel("Tarragona");
 		panel_1.add(lblNom);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		
-		JButton btnInsertar = new JButton("Insertar");
+		 btnInsertar = new JButton("Insertar");
 		panel_2.add(btnInsertar);
 	}
 
