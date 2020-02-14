@@ -1,0 +1,83 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.BoxLayout;
+import javax.swing.JTextField;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+
+import java.awt.FlowLayout;
+
+import net.miginfocom.swing.MigLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.SwingConstants;
+import javax.swing.JRadioButton;
+import javax.swing.JButton;
+
+
+public class Actividad3_Graphics extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	public JButton btnValidar;
+	public ButtonGroup grupoModos;
+	public JRadioButton rdbtnStament;
+	public JRadioButton rdbtnPrepared;
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Actividad3_Graphics frame = new Actividad3_Graphics();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Actividad3_Graphics() {
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new MigLayout("", "[][][][][][][grow][grow]", "[][][][][][][]"));
+		
+		JLabel lblNewLabel = new JLabel("Usuario:");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		contentPane.add(lblNewLabel, "cell 3 1,alignx right");
+		
+		textField = new JTextField();
+		contentPane.add(textField, "cell 4 1 2 1,growx");
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
+		contentPane.add(lblNewLabel_1, "cell 3 2,alignx right");
+		
+		textField_1 = new JTextField();
+		contentPane.add(textField_1, "cell 4 2 2 1,growx");
+		textField_1.setColumns(10);
+		
+		rdbtnStament = new JRadioButton("Statement");
+		rdbtnStament.setSelected(true);
+		rdbtnPrepared = new JRadioButton("PreparedStatement");
+		grupoModos = new ButtonGroup();
+		grupoModos.add(rdbtnStament);
+		grupoModos.add(rdbtnPrepared);
+		contentPane.add(rdbtnStament, "cell 4 3");
+		contentPane.add(rdbtnPrepared, "cell 4 4");
+		
+		btnValidar = new JButton("Validar");
+		contentPane.add(btnValidar, "cell 4 6,alignx center");
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+	}
+
+}
