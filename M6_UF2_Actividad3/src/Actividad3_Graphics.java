@@ -30,6 +30,7 @@ public class Actividad3_Graphics extends JFrame {
 	public ButtonGroup grupoModos;
 	public JRadioButton rdbtnStament;
 	public JRadioButton rdbtnPrepared;
+	JLabel labelVer;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,7 +48,7 @@ public class Actividad3_Graphics extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[][][][][][][grow][grow]", "[][][][][][][]"));
+		contentPane.setLayout(new MigLayout("", "[][][][][][][grow][grow]", "[][][][][][][][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Usuario:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -65,16 +66,19 @@ public class Actividad3_Graphics extends JFrame {
 		tfConstrasenya.setColumns(10);
 		
 		rdbtnStament = new JRadioButton("Statement");
-		rdbtnStament.setSelected(true);
 		rdbtnPrepared = new JRadioButton("PreparedStatement");
 		grupoModos = new ButtonGroup();
 		grupoModos.add(rdbtnStament);
 		grupoModos.add(rdbtnPrepared);
 		contentPane.add(rdbtnStament, "cell 4 3");
 		contentPane.add(rdbtnPrepared, "cell 4 4");
+		rdbtnStament.setSelected(true);
 		
 		btnValidar = new JButton("Validar");
 		contentPane.add(btnValidar, "cell 4 6,alignx center");
+		
+		labelVer = new JLabel("");
+		contentPane.add(labelVer, "cell 4 7 1 2");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
