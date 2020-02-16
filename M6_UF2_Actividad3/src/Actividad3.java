@@ -35,7 +35,7 @@ public class Actividad3 {
 				connection = realizarConexion();
 			}
 			selectStmt = connection.createStatement();
-			ResultSet rs = selectStmt.executeQuery("f");
+			ResultSet rs = selectStmt.executeQuery("SELECT usuario,contrasenya FROM usuarios");
 			while (rs.next()) {
 				if(rs.getString(1).equals(usuario) && rs.getString(2).equals(contrasenya)){
 					verificado=true;
