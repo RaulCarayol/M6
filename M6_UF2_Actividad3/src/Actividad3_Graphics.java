@@ -83,5 +83,4 @@ public class Actividad3_Graphics extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 	}
-
 }

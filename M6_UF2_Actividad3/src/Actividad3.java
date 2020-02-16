@@ -15,7 +15,6 @@ public class Actividad3 {
 	public static void main(String[] args) {
 		
 		graficos = new Actividad3_Graphics();
-		
 		graficos.btnValidar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//hacer conexion
@@ -96,8 +95,4 @@ public class Actividad3 {
 		}
 		return connection;
 	}
-	private static void selectusuarios(Connection connection, String usuario,String contrasenya) {
-
-	}
-
 }
