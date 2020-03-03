@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/02/2020 17:09:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="bd6" name="bd6.entity.Movimientos" optimistic-lock="version" table="movimientos">
+    <id name="id" type="java.lang.Integer">
+      <column name="ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="bd6.entity.Partidas" fetch="select" name="partidas">
+      <column name="partida_id" not-null="true"/>
+    </many-to-one>
+    <property name="moviments" type="string">
+      <column length="64" name="moviments" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
