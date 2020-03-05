@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 03-03-2020 a les 20:15:05
+-- Temps de generació: 05-03-2020 a les 16:54:34
 -- Versió del servidor: 10.1.13-MariaDB
 -- Versió de PHP: 7.0.6
 
@@ -124,7 +124,55 @@ INSERT INTO `movimientos` (`ID`, `partida_id`, `moviments`) VALUES
 (68, 15, 'X X X X      X X  X   O                         O O   X  O O O O'),
 (69, 15, 'X X X X      X O  X                             O O   X  O O O O'),
 (70, 15, 'X X X X      X O  X                             O O      O O X O'),
-(71, 15, 'X X X O      X    X                             O O      O O X O');
+(71, 15, 'X X X O      X    X                             O O      O O X O'),
+(72, 16, 'X X X X  X   X X  X                             O O O O  O O O O'),
+(73, 16, 'X X X X  X   X X  X                        O    O O   O  O O O O'),
+(74, 16, 'X X X X  X   X    X   X                    O    O O   O  O O O O'),
+(75, 16, 'X X X X  X   X    X   X             O           O O   O  O O O O'),
+(76, 16, 'X X X X  X   X    X          X      O           O O   O  O O O O'),
+(77, 16, 'X X X X  X   X    X          O                  O O   O  O O O O'),
+(78, 16, 'X X X X  X        X X        O                  O O   O  O O O O'),
+(79, 16, 'X X X X  X        X X        O                 OO O      O O O O'),
+(80, 16, 'X X X X  X        X        X O                 OO O      O O O O'),
+(81, 16, 'X X X X  X        X O      X                   OO O      O O O O'),
+(82, 16, 'X X X X  X        X O               X          OO O      O O O O'),
+(83, 16, 'X X X X  X        X O               X O         O O      O O O O'),
+(84, 16, 'X X X X  X        X O                 O      X  O O      O O O O'),
+(85, 16, 'X X X X  X O      X                   O      X  O O      O O O O'),
+(86, 16, 'X X X X  X O      X                   O         O O   X  O O O O'),
+(87, 16, 'X X O X  X        X                   O         O O   X  O O O O'),
+(88, 17, 'X X X X  X   X X    X                           O O O O  O O O O'),
+(89, 17, 'X X X X  X   X X    X                      O    O O   O  O O O O'),
+(90, 17, 'X X X X  X   X X             X             O    O O   O  O O O O'),
+(91, 17, 'X X X X  X   X X             X    O             O O   O  O O O O'),
+(92, 17, 'X X X X  X   X X                  O X           O O   O  O O O O'),
+(93, 17, 'X X X X  X   X X                  O X          OO O      O O O O'),
+(94, 17, 'X X X X  X   X X                  O          X OO O      O O O O'),
+(95, 17, 'X X X X  X   X X                  O      O   X O  O      O O O O'),
+(96, 17, 'X X X X  X   X        X           O      O   X O  O      O O O O'),
+(97, 17, 'X X X X  X   X        X           O      O   X OO O        O O O'),
+(98, 17, 'X X X X      X    X   X           O      O   X OO O        O O O'),
+(99, 17, 'X X X X      X    X   X         O O          X OO O        O O O'),
+(100, 17, '  X X X  X   X    X   X         O O          X OO O        O O O'),
+(101, 17, '  X X X  X   X    X   X         O O          X OO O O        O O'),
+(102, 17, '  X X X  X   X    X   X         O O            OO O O X      O O'),
+(103, 17, '  X X X  X   X    X   X         O O        O   OO   O X      O O'),
+(104, 17, '  X X X  X        X X X         O O        O   OO   O X      O O'),
+(105, 17, '  X X X  X        X X X         O O        O O OO     X      O O'),
+(106, 17, '  X X X  X        X   X      X  O O        O O OO     X      O O'),
+(107, 17, '  X X X  X        X   X      X  O O        O O OO   O X        O'),
+(108, 17, '  X X X  X        X   X      X  O O        O O OO   O        X O'),
+(109, 18, 'X X X X  X X   X      X                         O O O O  O O O O'),
+(110, 18, 'X X X X  X X   X      X                      O  O O O    O O O O'),
+(111, 18, 'X X X X  X X   X               X             O  O O O    O O O O'),
+(112, 18, 'X X X X  X X   X               X    O           O O O    O O O O'),
+(113, 18, 'X X X X  X X   X                    O X         O O O    O O O O'),
+(114, 18, 'X X X X  X X   X             O        X         O O O    O O O O'),
+(115, 18, 'X X X X  X X   X             O                 XO O O    O O O O'),
+(116, 18, 'X X X X  X X   X             O               O XO O      O O O O'),
+(117, 18, 'X X X X  X X   X             O               O  O O   X  O O O O'),
+(118, 18, 'X X X X  X X   X             O               O  O O O X  O O   O'),
+(119, 18, 'X X X X  X X   X             O               O  O O O    O O X O');
 
 -- --------------------------------------------------------
 
@@ -152,7 +200,10 @@ INSERT INTO `partidas` (`ID`, `fecha_inicio`, `ganador`, `num_movimientos`) VALU
 (12, '2020-03-03 19:03:01', NULL, 0),
 (13, '2020-03-03 19:06:17', NULL, 0),
 (14, '2020-03-03 19:09:57', NULL, 20),
-(15, '2020-03-03 20:07:53', NULL, 14);
+(15, '2020-03-03 20:07:53', NULL, 14),
+(16, '2020-03-05 16:11:10', NULL, 16),
+(17, '2020-03-05 16:12:49', 'X', 21),
+(18, '2020-03-05 16:15:34', 'X', 11);
 
 -- --------------------------------------------------------
 
@@ -212,12 +263,12 @@ ALTER TABLE `poblaciones`
 -- AUTO_INCREMENT per la taula `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 --
 -- AUTO_INCREMENT per la taula `partidas`
 --
 ALTER TABLE `partidas`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- Restriccions per taules bolcades
 --
