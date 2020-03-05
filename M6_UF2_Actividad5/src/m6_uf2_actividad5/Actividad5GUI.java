@@ -1,28 +1,18 @@
 package m6_uf2_actividad5;
 import bd6.entity.Movimientos;
 import bd6.entity.Partidas;
-import java.awt.Frame;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.event.WindowStateListener;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import m6_uf2_actividad5.NewHibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.id.GUIDGenerator;
 
-public class Actividad5GUI extends javax.swing.JFrame implements WindowStateListener,WindowListener{
+public class Actividad5GUI extends javax.swing.JFrame {
 
     private static String PARTIDA_MAS_NUEVA = "select ID, num_movimientos from partidas where ID =( select MAX(ID) from partidas)";
     private static String MOVIMIENTOS = "select moviments from movimientos where partida_id =:n";
@@ -297,24 +287,27 @@ public class Actividad5GUI extends javax.swing.JFrame implements WindowStateList
             jLabelO.setVisible(true);
 
         }
+        System.out.println("fila: "+fil);
         jTable1.setValueAt(" ", filaOrigen, columnaOrigen);
         actualitzaNouOrigen(-1, -1);
         numMovimientos++;
         guardarMovimientos();
-        if (jugaO && (fil == 0)) {
+        if (jugaX && (fil == 0)) {
             Session session = NewHibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             partida.setGanador("O");
             session.update(partida);
             ganado = true;
+            JOptionPane.showMessageDialog(this, "Ha gando O");
             this.dispose();
-        } else if (jugaX && fil == 7) {
+        } else if (jugaO && fil == 7) {
             Session session = NewHibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             partida.setGanador("X");
             session.update(partida);
             session.getTransaction().commit();
             session.close();
+            JOptionPane.showMessageDialog(this, "Ha gando X");
             ganado=true;
             this.dispose();
         }
@@ -332,9 +325,7 @@ public class Actividad5GUI extends javax.swing.JFrame implements WindowStateList
                     } else {
                     }
                 } else if (movimentValid(col, fil) && ((esBuit(col, fil) || ocupatContrari(col, fil)))) {
-
                         mou(col, fil);
-
                 }else{
                     actualitzaNouOrigen(-1, -1);
                 }
@@ -343,7 +334,6 @@ public class Actividad5GUI extends javax.swing.JFrame implements WindowStateList
 
     private void jButtonSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSortirActionPerformed
         // TODO add your handling code here:
-        
         this.dispose();
         dispose();
     }//GEN-LAST:event_jButtonSortirActionPerformed
@@ -357,43 +347,4 @@ public class Actividad5GUI extends javax.swing.JFrame implements WindowStateList
     private static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void windowStateChanged(WindowEvent e) {
-        System.err.println("Cambiado");
-    }
-
-    @Override
-    public void windowOpened(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void windowClosing(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void windowClosed(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void windowActivated(WindowEvent e) {
-        System.out.print("Ventana activada");
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

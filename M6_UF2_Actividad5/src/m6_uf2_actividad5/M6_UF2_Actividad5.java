@@ -20,7 +20,7 @@ public class M6_UF2_Actividad5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-               Thread t = new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
         @Override
         public void run() {
                     Actividad5GUI frame;
