@@ -5,11 +5,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.GridLayout;
+
 import javax.swing.BoxLayout;
 import javax.swing.SwingConstants;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -59,7 +64,11 @@ public class Actividad8GUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("Insertar Coches");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new InsertarVehiculoGUI().setVisible(true);
+				JFrame frame = new InsertarVehiculoGUI();
+				frame.setVisible(true);
+                frame.setEnabled(true);
+                frame.setLocationRelativeTo(null);
+                frame.pack();
 			}
 		});
 		panel_1.add(btnNewButton_1);
@@ -67,7 +76,12 @@ public class Actividad8GUI extends JFrame {
 		JButton btnNewButton_2 = new JButton("Insertar Personas");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new InsertarPropietarioGUI().setVisible(true);
+				
+				JFrame frame = new InsertarVehiculoGUI();
+				frame.setVisible(true);
+                frame.setEnabled(true);
+                frame.setLocationRelativeTo(null);
+                frame.pack();
 			}
 		});
 		panel_1.add(btnNewButton_2);

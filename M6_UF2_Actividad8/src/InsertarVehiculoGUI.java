@@ -26,9 +26,11 @@ import javax.swing.border.MatteBorder;
 
 import java.awt.Color;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 
 import java.awt.event.ActionListener;
@@ -130,8 +132,9 @@ public class InsertarVehiculoGUI extends JFrame {
 		JLabel lblNewLabel_3 = new JLabel("Propietario");
 		panel_2.add(lblNewLabel_3);
 		
-		JList list = new JList();
-		panel_2.add(list);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Persona 1", "Persona 2", "Persona 3"}));
+		panel_2.add(comboBox);
 		
 		chckbxReparado = new JCheckBox("Reparado");
 		panel_2.add(chckbxReparado);

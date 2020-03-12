@@ -13,6 +13,9 @@ public class M6_UF2_Actividad8 {
 				public void run() {
 					JFrame frame = new Actividad8GUI();
 					frame.setVisible(true);
+                    frame.setEnabled(true);
+                    frame.setLocationRelativeTo(null);
+                    frame.pack();
 				}
 			});
 			t.start();
