@@ -1,20 +1,21 @@
 
 import javax.persistence.*;
+import javax.swing.JFrame;
+
 import java.util.*;
 
 public class M6_UF2_Actividad8 {
 
 	public static void main(String[] args) {
-        EntityManagerFactory emf =
-                Persistence.createEntityManagerFactory("$objectdb/db/p2.odb");
-            EntityManager em = emf.createEntityManager();
-        
-            em.getTransaction().begin();
-            for (int i = 0; i < 1000; i++) {
-                //Point p = new Point(i, i);
-                //em.persist(p);
-            }
-            em.getTransaction().commit();
+			Thread t = new Thread(new Runnable() {
+				
+				@Override
+				public void run() {
+					JFrame frame = new Actividad8GUI();
+					frame.setVisible(true);
+				}
+			});
+			t.start();
 
 //            // Find the number of Point objects in the database:
 //            Query q1 = em.createQuery("SELECT COUNT(p) FROM Point p");
@@ -33,8 +34,7 @@ public class M6_UF2_Actividad8 {
 //            }
 
             // Close the database connection:
-            em.close();
-            emf.close();
+
 
 	}
 

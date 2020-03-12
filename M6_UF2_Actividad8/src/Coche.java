@@ -12,7 +12,7 @@ public class Coche implements Serializable{
     private String nombre;
     private String marca;
     private int años;
-    private int cV; //caballos Cubicos
+    private int cV; //caballos Cubicos 
     private Persona propietario;
     private boolean reparado; 
     

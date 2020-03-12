@@ -65,6 +65,11 @@ public class Actividad8GUI extends JFrame {
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Insertar Personas");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new InsertarPropietarioGUI().setVisible(true);
+			}
+		});
 		panel_1.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Salir");
